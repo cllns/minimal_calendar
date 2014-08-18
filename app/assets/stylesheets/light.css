@@ -1,0 +1,171 @@
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+
+
+
+body,
+input,
+select {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans;
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.row {
+  border-bottom: 5px dashed #DDD;
+  margin: 0px auto;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.date-block {
+  display: inline-block;
+  width: 27%;
+  vertical-align: top;
+  text-align: right;
+  min-width: 7em;
+  font-size: 24pt;
+  text-transform: uppercase;
+  padding: 20px;
+}
+.date-block select {
+  display:block;
+  width: 10em;
+  font-size: 20pt;
+}
+
+.listings {
+  max-width: 60%;
+  min-width: 600px;
+  display:inline-block;
+}
+
+.banner {
+  margin: 20px;
+  text-align: center;
+  font-weight: 100;
+  font-size: 50pt;
+}
+
+/*
+ * Taken from bootstrap, partially
+ */
+.alert {
+  border-radius: 4px;
+  border-style: solid;
+  font-weight:400;
+  border-width: 1px;
+  max-width: 80%;
+  min-width: 400px;
+  padding: 15px;
+  margin: 0 auto 20px;
+}
+
+/* Give room for the list bullet, since it goes into the existing padding */
+.alert li{
+  margin-left: 10px;
+}
+
+/* Green (success) notices */
+.alert.notice {
+  color: #3C763D;
+  background-color: #DFF0D8;
+  border-color: #D6E9C6;
+}
+
+.alert.error {
+  background-color: #FCF8E3;
+  border-color: #FAEBCC;
+  color: #8A6D3B;
+}
+.listing {
+  padding: 20px;
+}
+
+.listing.highlighted {
+  background-color: #FCF8E3;
+  border-radius: 3px;
+  border-color: #FAEBCC;
+  border-width: 1px;
+  border-style: solid;
+}
+.relative-day{
+  font-weight: 400;
+  color: #108DB6;
+}
+
+.listing .title,
+.listing .title input{
+  font-size: 20pt;
+}
+
+.listing .subtitle,
+.listing .subtitle input{
+  font-size: 14pt;
+  line-height: 16pt;
+}
+
+.listing span.name {
+  display:inline-block;
+}
+a {
+  color: inherit;
+  text-decoration:none;
+}
+
+input[type=text] {
+  margin: 3px;
+  width: 500px;
+}
+
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+form .actions {
+  padding-top: 10px;
+  width: 500px;
+}
+
+form .actions a {
+  text-decoration: underline;
+  color: #666;
+}
+.actions input{
+  float:right;
+}
+
+.actions a{
+  padding-top: 2px;
+  padding-right: 10px;
+  float:right;
+}
+

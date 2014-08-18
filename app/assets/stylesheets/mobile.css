@@ -1,0 +1,42 @@
+@media only screen and (max-width : 885px) {
+  .left, .center {
+    max-width: 100%;
+  }
+  .left {
+    padding: 0 1%;
+    width: 98%;
+    text-align: center;
+    word-wrap: normal;
+  }
+  .left > * {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .center {
+    margin: 0 20px;
+    min-width: 100px;
+  }
+
+  .listing {
+    padding: 20px 0;
+  }
+
+}
+
+
+@media only screen and (max-width : 680px) {
+  .left {
+    font-size: 22pt;
+  }
+  .relative-day{
+    display:block;
+  }
+  .year {
+    display:none;
+  }
+  .banner {
+    font-size: 10vw;
+    font-weight: inherit;
+  }
+}

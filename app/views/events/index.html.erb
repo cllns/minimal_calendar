@@ -1,0 +1,34 @@
+<% @events_by_date.each do |date, events| %>
+  <div class="row">
+    <div class="date-block em">
+      <div class="relative-day">
+        <%# TODO: change this to use Time (or DateTime), since Date does not
+            consider timezones
+        %>
+        <% if date == Date.today %>
+          Today
+        <% elsif date == Date.tomorrow %>
+          Tomorrow
+        <% end %>
+      </div>
+      <div class="day">
+        <%= date.strftime '%A' %>
+      </div>
+      <div class="date">
+        <%# All on one line to prevent extra spaces from being added %>
+        <%= date.strftime '%b %e' %><span class="year"><%= date.strftime ', %Y' %></span>
+      </div>
+    </div>
+    <div class="listings">
+      <% events.each do |event| %>
+      <%= render 'listing', event: event %>
+       <% end %>
+    </div>
+  </div>
+<% end %>
+
+<br>
+
+<% if session[:admin] %>
+    <%= render 'form' %>
+<% end %>

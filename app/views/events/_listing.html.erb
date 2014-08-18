@@ -1,0 +1,42 @@
+<div id="<%= event.id %>" class="listing vevent">
+  <%# For hCalendar, we need an internal link so Google's Structed Data will work, so we direct from ourselves %>
+  <%# It's better for all other users to have regular links though, so we give them that %>
+  <%= link_to '', '#' + event.id.to_s, class: 'url' %>
+    <div class="title summary">
+      <%= link_to event.url, target: '_blank' do %>
+        <%#
+          Instead of just printing the title, we want to have control over where the lines break.
+          So what we do is split on commas, but keep the commas in the string,
+          which we then place in <span>'s that display with inline-block,
+          and in between each of the <span>'s. we but a <wbr>
+          which tells the browser that's where we want to break
+        %>
+        <%
+          names = event.title.split(/(,)/).each_slice(2).map(&:join)
+          names.map! do |name|
+            '<span class="name">' + name + '</span>'
+          end
+        %>
+        <%=  names.join('<wbr /> ').html_safe %>
+      <% end %>
+
+
+      <% if session[:admin] %>
+          <%= link_to fa_icon('pencil'), edit_event_path(event) %>
+      <% end %>
+    </div>
+    <div class="subtitle description">
+      <%= link_to event.subtitle, event.url, target: '_blank' %>
+    </div>
+    <div>
+      <strong>
+      <%= link_to event.location, event.url, class: 'location', target: '_blank' %>
+      @
+      <%= link_to event.start.strftime('%l:%M%p'), event.url, target: '_blank' %>
+      </strong>
+    </div>
+    <%# Use this for "structured" data purposed.
+        We claim it's a blank abbreviation so we don't have to display it here.
+        (Since it's already displayed elsewhere) %>
+    <abbr class="dtstart" title="<%= event.start.to_formatted_s(:iso8601)%>"></abbr>
+</div>
