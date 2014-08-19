@@ -18,6 +18,9 @@ Long term
 - get rid of choosing the year, figure out a way to guess it (assume this year, or next year if applicable)
 - convert to rails engine?
 - add location management (perhaps with a URL, so it can be guessed)
+- add log-out
+- add support for arbitrary fields (rather than just title/subtitle/location)
+
 
 Front end
 ===
