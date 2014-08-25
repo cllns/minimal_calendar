@@ -11,12 +11,12 @@
         </ul>
       </div>
     <% end %>
-    <div class="left">
+    <div class="date-block">
         <div class="field">
           <%= f.date_select :start, order: [:month, :day, :year], start_year: Date.today.year %>
         </div>
     </div>
-    <div class="center">
+    <div class="listings">
       <div class="listing">
         <div class="field title">
           <%= f.text_field :title, placeholder: "Title" %>
