@@ -25,9 +25,8 @@
 
   <%= yield %>
 
-  <%# Analytics with Clicky %>
-  <script src="//static.getclicky.com/js" type="text/javascript"></script>
-  <script type="text/javascript">try{ clicky.init(100736523); }catch(e){}</script>
-  <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100736523ns.gif" /></p></noscript>
+  <%# Analytics block (definitely optional)  %>
+    <%= render "analytics" %>
+  <%# end Analytics %>
 </body>
 </html>
