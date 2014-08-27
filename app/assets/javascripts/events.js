@@ -17,6 +17,11 @@ $(function() {
     hiddenName: true
   });
 
+  // We persist the form's visibility
+  // (the cookie is updated when the form's visibility is toggled)
+  if ($.cookie('show-add-event-form')) {
+    $('.new-event').slideDown('fast');
+  }
 
   $('.toggle-event').click(function() {
     $('.new-event').slideToggle('fast', function() {
@@ -26,6 +31,9 @@ $(function() {
 
       $link.html(new_text);
       $link.data('toggled-text', old_text);
+
+      // update the cookie
+      $.cookie('show-add-event-form', $('.new-event').is(':visible'));
     });
   });
 });

@@ -25,7 +25,6 @@ Front end
 ===
 Short term
 ---
-- Move Add event form to top of page (and the ability to hide/show it with JS)
 - Better handle super long titles
 - in "New Event Added", include info about event
 

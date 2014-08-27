@@ -64,3 +64,6 @@ gem 'time_splitter'
 
 # keep events binded correctly w/ turbolinks
 gem 'jquery-turbolinks'
+
+# lets us use cookies!
+gem 'jquery-cookie-rails'
