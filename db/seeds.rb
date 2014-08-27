@@ -58,7 +58,7 @@ end
     title: get_title,
     subtitle: get_subtitle,
     location: locations.sample,
-    start: DateTime.new(date.year, date.month, date.day, 19),
+    start: Time.new(date.year, date.month, date.day, 19),
     end: nil,
     url: Faker::Internet.url('example.com')
   )

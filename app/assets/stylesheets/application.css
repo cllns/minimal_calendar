@@ -15,4 +15,7 @@
  *# require_tree .
  *= require font-awesome
  *= require_self
+ *= require pickadate/classic
+ *= require pickadate/classic.date
+ *= require pickadate/classic.time
  */

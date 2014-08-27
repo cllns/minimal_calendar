@@ -55,3 +55,9 @@ group :development, :test do
   # use factory girls (instead of fixtures)
   gem 'factory_girl_rails', '~> 4.4.0'
 end
+
+# fancy datepicker
+gem 'pickadate-rails'
+
+# let us work with date and time separately
+gem 'time_splitter'

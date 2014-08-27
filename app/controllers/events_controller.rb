@@ -21,7 +21,12 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+    # The time comes in with no timezone (so we assume UTC)
+    # todo: try to infer the timezone (incase one is sent), or somehow
+    #  (intentionally) standardize time format
+    fixed_params = event_params
+    fixed_params[:start_time] = Time.zone.utc_to_local(fixed_params[:start_time]).to_s
+    @event = Event.new(fixed_params)
 
     respond_to do |format|
       if @event.save
@@ -75,7 +80,8 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :subtitle, :start, :end, :location, :url)
+      params.require(:event).permit(:title, :subtitle, :start_time, :start_date,
+                                    :end, :location, :url)
     end
 
     def authenticate

@@ -13,7 +13,18 @@
     <% end %>
     <div class="date-block">
         <div class="field">
-          <%= f.date_select :start, order: [:month, :day, :year], start_year: Date.today.year %>
+          <div class="datepicker-box">
+            <%# todo: DRY this out %>
+            <% if @event.start_date.nil? %>
+              <%= date_field :event, :start_date,
+                    placeholder: Time.now.strftime('%b %d, %Y'),
+                    class: "datepicker" %>
+            <% else %>
+              <%= date_field :event, :start_date,
+                    class: "datepicker",
+                    data: {"value" => @event.start.strftime('%Y-%m-%d') } %>
+            <% end %>
+          </div>
         </div>
     </div>
     <div class="listings">
@@ -27,7 +38,7 @@
         <div class="field">
           <%= f.text_field :location, placeholder: "Location" %>
           @
-          <%= f.time_select :start, minute_step: 15, ampm: true, ignore_date: true, default: {hour: '19'} %>
+          <%= f.time_field :start_time, value: "7:00 PM", class: "timepicker" %>
         </div>
         <div class="field">
           <%= f.text_field :url, placeholder: "URL" %>

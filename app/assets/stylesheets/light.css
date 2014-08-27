@@ -59,7 +59,13 @@ select {
   width: 10em;
   font-size: 20pt;
 }
-
+.date-block .datepicker-box{
+  position: relative;
+}
+.timepicker{
+  position: absolute;
+  width: 100px;
+}
 .listings {
   max-width: 60%;
   min-width: 600px;
@@ -139,7 +145,7 @@ a {
   text-decoration:none;
 }
 
-input[type=text] {
+.listings input[type=text] {
   margin: 3px;
   width: 500px;
 }
