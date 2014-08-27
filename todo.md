@@ -14,7 +14,6 @@ Long term
 - Tags for genres/types of readings
 - use capistrano for deploying
 - add support for pulling from RSS feeds
-- get rid of choosing the year, figure out a way to guess it (assume this year, or next year if applicable)
 - convert to rails engine?
 - add location management (perhaps with a URL, so it can be guessed)
 - add log-out
@@ -27,14 +26,12 @@ Front end
 Short term
 ---
 - Move Add event form to top of page (and the ability to hide/show it with JS)
-- change/remove borders from add event form
-- Figure out a better way to select the day of the month (and set default to nothing so it MUST be manually selected)
-- Make date select much smaller
-- specify tab order so time is not in between location and URL
 - Better handle super long titles
 - in "New Event Added", include info about event
 
 Long term
 ---
-- Re-design the HTML/CSS
+- Re-design the HTML/CSS (make a new theme, make a common CSS file)
+- inline editing (with pjax?)
 - Fix view for event index to use Time/DateTime instead of Date (timezones!)
+- convert to sass & coffeescript ?
