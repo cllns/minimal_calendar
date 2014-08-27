@@ -11,6 +11,7 @@ Short term
 Long term
 ---
 - add real auth
+- add mailing list digest (with mailchimp?)
 - Tags for genres/types of readings
 - use capistrano for deploying
 - add support for pulling from RSS feeds
