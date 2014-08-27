@@ -17,23 +17,27 @@ $(function() {
     hiddenName: true
   });
 
-  // We persist the form's visibility
-  // (the cookie is updated when the form's visibility is toggled)
-  if ($.cookie('show-add-event-form')) {
-    $('.new-event').slideDown('fast');
-  }
-
-  $('.toggle-event').click(function() {
-    $('.new-event').slideToggle('fast', function() {
+  function swap_toggle_form_text() {
       $link = $('.toggle-event a');
       new_text = $link.data('toggled-text');
       old_text = $link.html();
 
       $link.html(new_text);
       $link.data('toggled-text', old_text);
+  }
+  // We persist the form's visibility
+  // (the cookie is updated when the form's visibility is toggled)
+  if ($.cookie('show-add-event-form') === "true") {
+    // cookie only store strings, hence    ^^^^
+    $('.new_event').show();
+    swap_toggle_form_text();
+  }
 
+  $('.toggle-event').click(function() {
+    $('.new_event').slideToggle('fast', function() {
+      swap_toggle_form_text();
       // update the cookie
-      $.cookie('show-add-event-form', $('.new-event').is(':visible'));
+      $.cookie('show-add-event-form', $('.new_event').is(':visible'));
     });
   });
 });

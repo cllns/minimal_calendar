@@ -34,7 +34,7 @@ html {
 }
 
 body {
-  margin-bottom: 300px;
+  margin-bottom: 150px;
 }
 
 
@@ -100,7 +100,7 @@ header .toggle-event a{
   color: blue;
 }
 
-.new-event {
+.new_event {
   display:none;
 }
 
