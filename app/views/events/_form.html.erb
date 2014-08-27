@@ -35,10 +35,16 @@
         <div class="field subtitle">
           <%= f.text_field :subtitle, placeholder: "Subtitle" %>
         </div>
-        <div class="field">
-          <%= f.text_field :location, placeholder: "Location" %>
-          @
-          <%= f.time_field :start_time, value: "7:00 PM", class: "timepicker" %>
+        <div class="location-and-time">
+          <span class="field location">
+            <%= f.text_field :location, placeholder: "Location" %>
+          </span>
+          <span class="at-symbol">
+            @
+          </span>
+          <span class="field time">
+            <%= f.time_field :start_time, value: "7:00 PM", class: "timepicker" %>
+          </span>
         </div>
         <div class="field">
           <%= f.text_field :url, placeholder: "URL" %>

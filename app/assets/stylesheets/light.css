@@ -20,7 +20,22 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
+/* don't want errors to mess up our layout */
+.listing .field_with_errors {
+  display:inline;
+}
+
+body {
+  margin-bottom: 300px;
+}
 
 
 body,
@@ -54,20 +69,21 @@ select {
   text-transform: uppercase;
   padding: 20px;
 }
-.date-block select {
-  display:block;
-  width: 10em;
-  font-size: 20pt;
+.date-block input{
+  width: 7.5em;
 }
 .date-block .datepicker-box{
+  /* needed for datepicker to be the correct size */
   position: relative;
 }
 .timepicker{
-  position: absolute;
+  position:relative;
   width: 100px;
+
 }
+
 .listings {
-  max-width: 60%;
+  max-width: 95%;
   min-width: 600px;
   display:inline-block;
 }
@@ -126,6 +142,15 @@ select {
   color: #108DB6;
 }
 
+.listing input {
+  margin: 3px 0;
+}
+
+.listings input[type=text],
+.listings input[type=date] {
+  width: 100%;
+}
+
 .listing .title,
 .listing .title input{
   font-size: 20pt;
@@ -136,18 +161,25 @@ select {
   font-size: 14pt;
   line-height: 16pt;
 }
+.listing .location-and-time {
+  position:relative;
+}
+.listing .location input{
+  width: 440px;
+}
+.listing .time {
+  display: inline-block;
+  position:relative;
+}
 
 .listing span.name {
   display:inline-block;
 }
+
+
 a {
   color: inherit;
   text-decoration:none;
-}
-
-.listings input[type=text] {
-  margin: 3px;
-  width: 500px;
 }
 
 
@@ -158,7 +190,6 @@ h1 {
 
 form .actions {
   padding-top: 10px;
-  width: 500px;
 }
 
 form .actions a {

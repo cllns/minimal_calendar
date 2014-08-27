@@ -13,6 +13,7 @@ $(function() {
   $('.timepicker').pickatime({
     interval: 15,
     formatSubmit: 'HH:i',
+    editable: true,
     hiddenName: true
   });
 });
