@@ -26,7 +26,6 @@ Front end
 Short term
 ---
 - Better handle super long titles
-- in "New Event Added", include info about event
 
 Long term
 ---

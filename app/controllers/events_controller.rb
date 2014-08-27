@@ -30,8 +30,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        flash.now[:notice] = "Your item was created"
-        format.html { redirect_to events_url, notice: "New event added!" }
+        format.html { redirect_to events_url,
+                      notice: "'#{@event.title}' was successfully added!" }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :edit }
@@ -46,7 +46,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to events_url,
-                      notice: '"' + @event.title + '" was successfully updated.' }
+                      notice: "'#{@event.title}' was successfully updated!" }
         # TODO: :show doesn't exist. maybe remove JSON altogether?
         format.json { render :show, status: :ok, location: @event }
       else
@@ -62,7 +62,7 @@ class EventsController < ApplicationController
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url,
-                    notice: '"' + @event.title + '" was successfully deleted.' }
+                    notice: "'#{@event.title}' was successfully deleted." }
       format.json { head :no_content }
     end
   end
