@@ -1,0 +1,8 @@
+<div class="site-name">
+  <%= link_to Rails.application.config.site_name, root_path %>
+</div>
+<% if session[:admin] && @event.new_record? %>
+  <div class="toggle-event">
+    <%= content_tag(:a, "add event", data: {"toggled-text" => "hide form"})  %>
+  </div>
+<% end %>

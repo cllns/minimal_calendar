@@ -88,12 +88,22 @@ select {
   display:inline-block;
 }
 
-.banner {
+header {
   margin: 20px;
   text-align: center;
-  font-weight: 100;
-  font-size: 50pt;
 }
+header .site-name{
+  font-size: 70px;
+  font-weight: 100;
+}
+header .toggle-event a{
+  color: blue;
+}
+
+.new-event {
+  display:none;
+}
+
 
 /*
  * Taken from bootstrap, partially

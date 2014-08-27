@@ -1,3 +1,9 @@
+<% if session[:admin] %>
+  <div class="new-event">
+    <%= render 'form' %>
+  </div>
+<% end %>
+
 <% @events_by_date.each do |date, events| %>
   <div class="row">
     <div class="date-block em">
@@ -27,8 +33,3 @@
   </div>
 <% end %>
 
-<br>
-
-<% if session[:admin] %>
-    <%= render 'form' %>
-<% end %>

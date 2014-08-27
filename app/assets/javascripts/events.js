@@ -16,4 +16,16 @@ $(function() {
     editable: true,
     hiddenName: true
   });
+
+
+  $('.toggle-event').click(function() {
+    $('.new-event').slideToggle('fast', function() {
+      $link = $('.toggle-event a');
+      new_text = $link.data('toggled-text');
+      old_text = $link.html();
+
+      $link.html(new_text);
+      $link.data('toggled-text', old_text);
+    });
+  });
 });

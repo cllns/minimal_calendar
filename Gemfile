@@ -61,3 +61,6 @@ gem 'pickadate-rails'
 
 # let us work with date and time separately
 gem 'time_splitter'
+
+# keep events binded correctly w/ turbolinks
+gem 'jquery-turbolinks'
