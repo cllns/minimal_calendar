@@ -54,7 +54,7 @@ and change the values for:
 
 then edit the secrets
 
-`$EDITOR config/secrets.yaml`
+`$EDITOR config/secrets.yml`
 
 and **change the very last line** to be your desired `username:password` rather
 than the default (annoyingly verbose, by intention) `changeme:MoreImportantlyChangeThisPassword`.
