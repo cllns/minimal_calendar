@@ -26,7 +26,7 @@ Front end
 ===
 Short term
 ---
-- Better handle super long titles
+- Switch to SASS
 
 Long term
 ---
