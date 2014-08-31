@@ -1,10 +1,10 @@
 <% if session[:admin] %>
-  <%= render 'form' %>
+    <%= render 'form' %>
 <% end %>
 
 <% @events_by_date.each do |date, events| %>
-  <div class="row">
-    <div class="date-block em">
+  <div class="pure-g row">
+    <div class="pure-u-1 pure-u-md-1-3 date-block em">
       <div class="relative-day">
         <%# TODO: change this to use Time (or DateTime), since Date does not
             consider timezones
@@ -23,9 +23,9 @@
         <%= date.strftime '%b %e' %><span class="year"><%= date.strftime ', %Y' %></span>
       </div>
     </div>
-    <div class="listings">
+    <div class="pure-u-1 pure-u-md-2-3 listings-block">
       <% events.each do |event| %>
-      <%= render 'listing', event: event %>
+        <%= render 'listing', event: event %>
        <% end %>
     </div>
   </div>

@@ -16,14 +16,19 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 </head>
 <body>
-
-  <header>
-    <%= render "header" %>
-  </header>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <header>
+        <%= render "header" %>
+      </header>
+    </div>
+  </div>
 
   <%= render "messages" %>
 
+
   <%= yield %>
+
 
   <%# Analytics block (definitely optional)  %>
     <%= render "analytics" %>

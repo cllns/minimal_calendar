@@ -10,12 +10,14 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *=  require light
- *=  require mobile
  *# require_tree .
  *= require font-awesome
  *= require_self
+ *= require purecss
+ *= require buttons
  *= require pickadate/classic
  *= require pickadate/classic.date
  *= require pickadate/classic.time
+ *=  require light
+ *=  require mobile
  */

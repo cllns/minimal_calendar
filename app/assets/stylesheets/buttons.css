@@ -1,0 +1,49 @@
+/*
+ * customizations for pure buttons
+ *  taken from http://purecss.io/buttons/
+ */
+
+/* colors */
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* modified to have the 0.9 alpha, to mute the colors a bit */
+.button-success {
+  background: rgba(28, 184, 65, 0.9); /* this is a green */
+}
+
+.button-error {
+  background: rgba(202, 60, 60, 0.9); /* this is a maroon */
+}
+
+.button-warning {
+  background: rgba(223, 117, 20,0.9); /* this is an orange */
+}
+
+.button-secondary {
+  background: rgb(66, 184, 221, 0.9); /* this is a light blue */
+}
+
+
+/* sizes */
+.button-xsmall {
+  font-size: 70%;
+}
+
+.button-small {
+  font-size: 85%;
+}
+
+.button-large {
+  font-size: 110%;
+}
+
+.button-xlarge {
+  font-size: 125%;
+}

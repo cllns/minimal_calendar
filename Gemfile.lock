@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/cllns/purecss-rails.git
+  revision: 401a4e3a8b5b88c61f153f309aed181034edda86
+  specs:
+    purecss-rails (0.5.1)
+      railties (>= 3.2.6, < 5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -141,6 +148,7 @@ DEPENDENCIES
   jquery-rails
   pg
   pickadate-rails
+  purecss-rails!
   rack-cache
   rails (= 4.1.0)
   rspec-rails (~> 3.0.2)

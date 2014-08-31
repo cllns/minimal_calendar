@@ -1,59 +1,61 @@
-<%= form_for @event do |f| %>
-  <% if @event.errors.any? %>
-    <div class="alert error">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="pure-g row">
+  <%= form_for @event do |f| %>
+    <% if @event.errors.any? %>
+      <div class="alert error">
+        <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-      <% @event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="date-block pure-u-1-1 pure-u-md-1-3">
+        <div class="field">
+          <div class="datepicker-box">
+            <%# todo: DRY this out %>
+            <% if @event.start_date.nil? %>
+              <%= date_field :event, :start_date,
+                    placeholder: Time.now.strftime('%b %d, %Y'),
+                    class: "datepicker" %>
+            <% else %>
+              <%= date_field :event, :start_date,
+                    class: "datepicker",
+                    data: {"value" => @event.start.strftime('%Y-%m-%d') } %>
+            <% end %>
+          </div>
+        </div>
     </div>
-  <% end %>
-  <div class="date-block">
-      <div class="field">
-        <div class="datepicker-box">
-          <%# todo: DRY this out %>
-          <% if @event.start_date.nil? %>
-            <%= date_field :event, :start_date,
-                  placeholder: Time.now.strftime('%b %d, %Y'),
-                  class: "datepicker" %>
-          <% else %>
-            <%= date_field :event, :start_date,
-                  class: "datepicker",
-                  data: {"value" => @event.start.strftime('%Y-%m-%d') } %>
+    <div class="listings-block pure-u-1-1 pure-u-md-2-3">
+      <div class="listing">
+        <div class="field title">
+          <%= f.text_field :title, placeholder: "Title" %>
+        </div>
+        <div class="field subtitle">
+          <%= f.text_field :subtitle, placeholder: "Subtitle" %>
+        </div>
+        <div class="location-and-time pure-g">
+          <span class="field location pure-u-15-24 pure-u-md-3-4">
+            <%= f.text_field :location, placeholder: "Location" %>
+          </span>
+          <span class="at-symbol pure-u-2-24 pure-u-md-1-24">
+            @
+          </span>
+          <div class="field time pure-u-7-24 pure-u-md-5-24">
+            <%= f.time_field :start_time, value: "7:00 PM", class: "timepicker" %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.text_field :url, placeholder: "URL" %>
+        </div>
+        <div class="actions">
+          <% unless @event.new_record? %>
+            <%= link_to 'Delete', @event, class: "pure-button button-error button-small",  method: :delete, data: { confirm: 'Are you sure you want to delete this item?' } %>
           <% end %>
+          <%= f.submit class: "pure-button button-success" %>
         </div>
       </div>
-  </div>
-  <div class="listings">
-    <div class="listing">
-      <div class="field title">
-        <%= f.text_field :title, placeholder: "Title" %>
-      </div>
-      <div class="field subtitle">
-        <%= f.text_field :subtitle, placeholder: "Subtitle" %>
-      </div>
-      <div class="location-and-time">
-        <span class="field location">
-          <%= f.text_field :location, placeholder: "Location" %>
-        </span>
-        <span class="at-symbol">
-          @
-        </span>
-        <span class="field time">
-          <%= f.time_field :start_time, value: "7:00 PM", class: "timepicker" %>
-        </span>
-      </div>
-      <div class="field">
-        <%= f.text_field :url, placeholder: "URL" %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
-        <% unless @event.new_record? %>
-          <%= link_to 'Delete', @event, method: :delete, data: { confirm: 'Are you sure you want to delete this item?' } %>
-        <% end %>
-      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

@@ -38,9 +38,8 @@ body {
 }
 
 
-body,
-input,
-select {
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
   font-family: "Helvetica Neue", Helvetica, Arial, sans;
   font-size: 1em;
   font-weight: 300;
@@ -54,37 +53,28 @@ select {
 
 .row {
   border-bottom: 5px dashed #DDD;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 20px 0;
   width: 100%;
 }
 
-.date-block {
+.pure-g .date-block {
   display: inline-block;
-  width: 27%;
-  vertical-align: top;
-  text-align: right;
-  min-width: 7em;
-  font-size: 24pt;
+  text-align: center;;
+  font-size: 2em;
   text-transform: uppercase;
-  padding: 20px;
+  padding: 20px 2%;
 }
 .date-block input{
-  width: 7.5em;
+  width: 100%;
 }
+
 .date-block .datepicker-box{
   /* needed for datepicker to be the correct size */
   position: relative;
 }
-.timepicker{
-  position:relative;
-  width: 100px;
 
-}
-
-.listings {
-  max-width: 95%;
-  min-width: 600px;
+.listings-block {
   display:inline-block;
 }
 
@@ -92,7 +82,7 @@ header {
   margin: 20px;
   text-align: center;
 }
-header .site-name{
+header .site-name a{
   font-size: 70px;
   font-weight: 100;
 }
@@ -113,8 +103,7 @@ header .toggle-event a{
   border-style: solid;
   font-weight:400;
   border-width: 1px;
-  max-width: 80%;
-  min-width: 400px;
+  max-width: 90%;
   padding: 15px;
   margin: 0 auto 20px;
 }
@@ -137,7 +126,7 @@ header .toggle-event a{
   color: #8A6D3B;
 }
 .listing {
-  padding: 20px;
+  padding: 20px 2%;
 }
 
 .listing.highlighted {
@@ -152,12 +141,22 @@ header .toggle-event a{
   color: #108DB6;
 }
 
-.listing input {
+.listing input,
+.date-block input{
   margin: 3px 0;
 }
 
-.listings input[type=text],
-.listings input[type=date] {
+.new_event .date-block,
+.new_event .listings-block {
+  padding: 0 10px;
+}
+.new_event .listing {
+  padding:0;
+}
+
+.listings-block input[type=text],
+.listings-block input[type=date],
+.listings-block input[type=time] {
   width: 100%;
 }
 
@@ -171,17 +170,23 @@ header .toggle-event a{
   font-size: 14pt;
   line-height: 16pt;
 }
-.listing .location-and-time {
+.listing .location-and-time .at-symbol{
+  text-align:center;
+  vertical-align:middle;
+  line-height:1.75em;
+  overflow:hidden
+}
+.listing .location-and-time .time {
+  display:inline-block;
   position:relative;
 }
-.listing .location input{
-  width: 440px;
+.listing .location-and-time .time .picker--time,
+.listing .location-and-time .time .picker__holder{
+  min-width: 0;
 }
-.listing .time {
-  display: inline-block;
-  position:relative;
+.listing .location-and-time .time .picker__list-item{
+  padding: 0.75em 0.25em;
 }
-
 .listing span.name {
   display:inline-block;
 }
@@ -200,19 +205,9 @@ h1 {
 
 form .actions {
   padding-top: 10px;
-}
-
-form .actions a {
-  text-decoration: underline;
-  color: #666;
-}
-.actions input{
   float:right;
 }
 
-.actions a{
-  padding-top: 2px;
-  padding-right: 10px;
-  float:right;
+form .actions > *{
+  display:inline-block;
 }
-

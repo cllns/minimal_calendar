@@ -1,20 +1,18 @@
+/*
 @media only screen and (max-width : 885px) {
-  .left, .center {
-    max-width: 100%;
-  }
-  .left {
+  .date-block {
     padding: 0 1%;
     width: 98%;
     text-align: center;
     word-wrap: normal;
   }
-  .left > * {
+  .date-block > * {
     display: inline-block;
     white-space: nowrap;
   }
 
-  .center {
-    margin: 0 20px;
+  .listings {
+    margin: 20px;
     min-width: 100px;
   }
 
@@ -38,5 +36,26 @@
   .banner {
     font-size: 10vw;
     font-weight: inherit;
+  }
+}
+*/
+@media screen and (min-width: 48em) {
+  .date-block > div {
+    text-align:right;
+  }
+
+  .listing .location-and-time .at-symbol {
+  }
+
+  .date-block input {
+    max-width:7.5em;
+
+  }
+
+  .new_event .date-block,
+  .new_event .listings-block,
+  .edit_event .date-block,
+  .edit_event .listings-block{
+    max-width: 600px;
   }
 }

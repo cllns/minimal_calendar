@@ -109,4 +109,5 @@ class EventsController < ApplicationController
         t.start.to_date
       end
     end
+
 end

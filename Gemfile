@@ -64,3 +64,7 @@ gem 'time_splitter'
 
 # lets us use cookies!
 gem 'jquery-cookie-rails'
+
+# pure-css  (for grid and pretty buttons)
+# using a personal fork until the PR is merged
+gem 'purecss-rails', :git => 'git://github.com/cllns/purecss-rails.git'

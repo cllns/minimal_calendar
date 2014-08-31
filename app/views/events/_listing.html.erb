@@ -29,11 +29,9 @@
       <%= link_to event.subtitle, event.url, target: '_blank' %>
     </div>
     <div>
-      <strong>
       <%= link_to event.location, event.url, class: 'location', target: '_blank' %>
       @
       <%= link_to event.start.strftime('%l:%M%p'), event.url, target: '_blank' %>
-      </strong>
     </div>
     <%# Use this for "structured" data purposed.
         We claim it's a blank abbreviation so we don't have to display it here.
