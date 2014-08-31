@@ -52,9 +52,12 @@ and change the values for:
 - `config.meta_description`
 - `config.meta_keywords`
 
-then edit the secrets
+then copy secrets.yml file and change the production password
 
-`$EDITOR config/secrets.yml`
+```
+cp config/secrets-example.yml config/secrets.yml
+$EDITOR config/secrets.yml
+```
 
 and **change the very last line** to be your desired `username:password` rather
 than the default (annoyingly verbose, by intention) `changeme:MoreImportantlyChangeThisPassword`.
