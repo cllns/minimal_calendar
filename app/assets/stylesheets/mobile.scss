@@ -41,21 +41,20 @@
 */
 @media screen and (min-width: 48em) {
   .date-block > div {
-    text-align:right;
+    text-align: right;
   }
-
-  .listing .location-and-time .at-symbol {
-  }
-
+  .listing! .location-and-time .at-symbol {}
   .date-block input {
-    max-width:7.5em;
-
+    max-width: 7.5em;
   }
-
-  .new_event .date-block,
-  .new_event .listings-block,
-  .edit_event .date-block,
-  .edit_event .listings-block{
-    max-width: 600px;
+  .new_event {
+    .date-block, .listings-block {
+      max-width: 600px;
+    }
+  }
+  .edit_event {
+    .date-block, .listings-block {
+      max-width: 600px;
+    }
   }
 }

@@ -1,0 +1,216 @@
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+  &:before, &:after {
+    box-sizing: inherit;
+  }
+}
+
+/* don't want errors to mess up our layout */
+
+.listing .field_with_errors {
+  display: inline;
+}
+
+body {
+  margin-bottom: 150px;
+}
+
+html, button, input, select, textarea, .pure-g [class*="pure-u"] {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans;
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.row {
+  border-bottom: 5px dashed #DDD;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.pure-g .date-block {
+  display: inline-block;
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  padding: 20px 2%;
+}
+
+.date-block {
+  input {
+    width: 100%;
+  }
+  .datepicker-box {
+    /* needed for datepicker to be the correct size */
+    position: relative;
+  }
+}
+
+.listings-block {
+  display: inline-block;
+}
+
+header {
+  margin: 20px;
+  text-align: center;
+  .site-name a {
+    font-size: 70px;
+    font-weight: 100;
+  }
+  .toggle-event a {
+    color: blue;
+  }
+}
+
+.new_event {
+  display: none;
+}
+
+/*
+ * Taken from bootstrap, partially
+ */
+
+.alert {
+  border-radius: 4px;
+  border-style: solid;
+  font-weight: 400;
+  border-width: 1px;
+  max-width: 90%;
+  padding: 15px;
+  margin: 0 auto 20px;
+  li {
+    margin-left: 10px;
+  }
+  &.notice {
+    color: #3C763D;
+    background-color: #DFF0D8;
+    border-color: #D6E9C6;
+  }
+  &.error {
+    background-color: #FCF8E3;
+    border-color: #FAEBCC;
+    color: #8A6D3B;
+  }
+}
+
+/* Give room for the list bullet, since it goes into the existing padding */
+
+/* Green (success) notices */
+
+.listing {
+  padding: 20px 2%;
+  &.highlighted {
+    background-color: #FCF8E3;
+    border-radius: 3px;
+    border-color: #FAEBCC;
+    border-width: 1px;
+    border-style: solid;
+  }
+}
+
+.relative-day {
+  font-weight: 400;
+  color: #108DB6;
+}
+
+.listing input, .date-block input {
+  margin: 3px 0;
+}
+
+.new_event {
+  .date-block, .listings-block {
+    padding: 0 10px;
+  }
+  .listing {
+    padding: 0;
+  }
+}
+
+.listings-block input {
+  &[type=text], &[type=date], &[type=time] {
+    width: 100%;
+  }
+}
+
+.listing {
+  .title {
+    font-size: 20pt;
+    input {
+      font-size: 20pt;
+    }
+  }
+  .subtitle {
+    font-size: 14pt;
+    line-height: 16pt;
+    input {
+      font-size: 14pt;
+      line-height: 16pt;
+    }
+  }
+  .location-and-time {
+    .at-symbol {
+      text-align: center;
+      vertical-align: middle;
+      line-height: 1.75em;
+      overflow: hidden;
+    }
+    .time {
+      display: inline-block;
+      position: relative;
+      .picker--time, .picker__holder {
+        min-width: 0;
+      }
+      .picker__list-item {
+        padding: 0.75em 0.25em;
+      }
+    }
+  }
+  span.name {
+    display: inline-block;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+form .actions {
+  padding-top: 10px;
+  float: right;
+  > * {
+    display: inline-block;
+  }
+}
