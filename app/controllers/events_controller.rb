@@ -103,9 +103,7 @@ class EventsController < ApplicationController
 
     # this returns a hash of Date => [events...]
     def set_events_by_date
-      # TODO: do we really want to convert this to a date for the key?
-      #       we could probably group by date later?
-      @events_by_date = Event.order(:start).where("start > ?", Date.today).group_by do |t|
+      @events_by_date = Event.order(:start).where("start > ?", DateTime.now).group_by do |t|
         t.start.to_date
       end
     end
