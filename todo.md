@@ -33,4 +33,3 @@ Long term
 - Re-design the HTML/CSS (make a new theme, make a common CSS file)
 - inline editing (with pjax?)
 - Fix view for event index to use Time/DateTime instead of Date (timezones!)
-- convert to sass & coffeescript ?
