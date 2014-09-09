@@ -2,15 +2,19 @@ Minimal Calendar
 ===
 
 Minimal Calendar is the Rails application behind
-[bostonreadings.com](http://bostonreadings.com), a list of upcoming fiction, poetry
-(and more!) readings in the Greater Boston area.
+[bostonreadings.com](http://bostonreadings.com),
+a list of upcoming fiction, poetry, nonfiction (and more!)
+readings in the Greater Boston area.
 
-The site is essentially one page, for most users.
-For admin users, there is an additional page for editing events.
+
+The site is one page for typical users, which lists all the upcoming events.
+
+For admin users, there is an additional page to edit the events. (Adding new
+events is done via slight UI change on the main page.)
 
 Each listing is made up of a:
 - Title
-- Subtitle
+- Subtitle (*optional*)
 - Location
 - Start time
 - URL
@@ -23,13 +27,11 @@ being shown at all.
 
 Development
 ---
-As of August 2014, Minimal Calendar is under active development.
+As of September 2014, Minimal Calendar is under active development.
 
 Please check out the [todo file](todo.md).
 
-Minimal Calendar is primarily a "portfolio project". That is, I am using it to
-show my web development skills.
-
+Minimal Calendar is primarily a "portfolio project".
 
 
 Getting Started
@@ -89,3 +91,8 @@ then run your app!
 You can view the site at [localhost:3000](localhost:3000) and login at [localhost:3000/login](localhost:3000/login)
 
 from there, things should be self-explanatory!
+
+
+Contributing
+---
+Please open an issue if you have any trouble at all. (I mean it!)
