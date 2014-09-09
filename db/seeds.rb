@@ -1,20 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# This file should contain all the record creation needed to seed the database
+# with its default values.
+# The data can then be loaded with the rake db:seed
+# (or created alongside the db with db:setup).
 
 Event.delete_all
 
 # What goes at the end of the Location
-suffixes = ['Books', 'Book Store', 'Bookstore', 'Booksellers']
-locations = Array.new(5) do |i|
+suffixes = ["Books", "Book Store", "Bookstore", "Booksellers"]
+locations = Array.new(5) do |_i|
   Faker::Name.last_name + " " + suffixes.sample
 end
-
- # ['Harvard Book Store', 'Porter Square Books', 'Brookline Booksmith', 'Trident Booksellers and Cafe']
 
 # This is how we get the subtitle.
 # We construct it from 1..3 (number_of_items_in_subtitle) items randomly
@@ -50,9 +45,9 @@ def get_title
   items.sample(number_of_items_in_title).join(", ")
 end
 
-15.times do |i|
-  date = Date.today + (10 * rand) # get a random date up to 45 days into the future
-
+15.times do |_i|
+  # get a random date up to 45 days into the future
+  date = Date.today + (10 * rand)
 
   Event.create(
     title: get_title,
@@ -60,6 +55,6 @@ end
     location: locations.sample,
     start: Time.new(date.year, date.month, date.day, 19),
     end: nil,
-    url: Faker::Internet.url('example.com')
+    url: Faker::Internet.url("example.com")
   )
 end

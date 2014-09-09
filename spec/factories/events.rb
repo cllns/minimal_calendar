@@ -6,4 +6,3 @@ FactoryGirl.define do
     start DateTime.now + 1.day
   end
 end
-

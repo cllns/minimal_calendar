@@ -1,26 +1,24 @@
-source 'https://rubygems.org'
-
+source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem "rails", "4.1.0"
 # Use postgres as the database for Active Record
-gem 'pg'
+gem "pg"
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem "uglifier", ">= 1.3.0"
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-# gem 'turbolinks'
+gem "jquery-rails"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem "jbuilder", "~> 2.0"
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem "sdoc", "~> 0.4.0",          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+# Spring speeds up development by keeping your application
+# running in the background. Read more: https://github.com/rails/spring
+gem "spring",        group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -34,40 +32,42 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
 # Below added by sean
 
 # use rack-cache (from config/environments/production.rb)
-gem 'rack-cache'
+gem "rack-cache"
 
 # use Font Awesome, for the icons
-gem 'font-awesome-rails'
+gem "font-awesome-rails"
 
 # use faker to make some good fake author names and titles (for seeds.rb)
-gem 'faker', group: :development
+gem "faker", group: :development
 
 group :development, :test do
   # use rspec
-  gem 'rspec-rails', '~> 3.0.2'
+  gem "rspec-rails", "~> 3.0.2"
   # use shoulda (matchers)
-  gem 'shoulda-matchers', '~> 2.6.2'
+  gem "shoulda-matchers", "~> 2.6.2"
 
   # use factory girls (instead of fixtures)
-  gem 'factory_girl_rails', '~> 4.4.0'
+  gem "factory_girl_rails", "~> 4.4.0"
+
+  # rubocop to make sure we style our code consistently
+  gem "rubocop"
 end
 
 # fancy datepicker
-gem 'pickadate-rails'
+gem "pickadate-rails"
 
 # let us work with date and time separately
-gem 'time_splitter'
+gem "time_splitter"
 
 # lets us use cookies!
-gem 'jquery-cookie-rails'
+gem "jquery-cookie-rails"
 
 # pure-css  (for grid and pretty buttons)
 # using a personal fork until the PR is merged
-gem 'purecss-rails', :git => 'git://github.com/cllns/purecss-rails.git'
+gem "purecss-rails", git: "git://github.com/cllns/purecss-rails.git"
 
 # use SASS
-gem 'sass-rails', '~> 4.0.3'
+gem "sass-rails", "~> 4.0.3"
