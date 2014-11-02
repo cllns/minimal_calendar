@@ -19,15 +19,7 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    # The time comes in with no timezone (so we assume UTC)
-    # todo: try to infer the timezone (incase one is sent), or somehow
-    #  (intentionally) standardize time format
-    fixed_params = event_params
-    fixed_params[:start_time] = Time.zone.utc_to_local(
-      fixed_params[:start_time]
-    ).to_s
-
-    @event = Event.new(fixed_params)
+    @event = Event.new(clean_params)
 
     respond_to do |format|
       if @event.save
@@ -109,4 +101,17 @@ class EventsController < ApplicationController
                             where("start > ?", DateTime.now).
                             group_by { |t| t.start.to_date }
   end
+
+  def clean_params
+    # The time comes in with no timezone (so we assume UTC)
+    # todo: try to infer the timezone (incase one is sent), or somehow
+    #  (intentionally) standardize time format
+    clean_params = event_params
+    clean_params[:start_time] = Time.zone.utc_to_local(
+      clean_params[:start_time]
+    ).to_s
+    clean_params
+
+  end
+
 end
