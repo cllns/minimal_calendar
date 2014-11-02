@@ -7,9 +7,9 @@ class EventsController < ApplicationController
   def index
     # We want a new Event ready for the template
     #  but it only shows if session[:admin]
-    #  todo: de-duplicate this?
     if session[:admin]
-      @event = Event.new
+      # Default start time is 'today' at 7PM
+      @event = Event.new(start: Time.zone.parse("7:00 PM"))
     end
   end
 

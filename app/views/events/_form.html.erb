@@ -14,16 +14,9 @@
     <div class="date-block pure-u-1-1 pure-u-md-1-3">
         <div class="field">
           <div class="datepicker-box">
-            <%# todo: DRY this out %>
-            <% if @event.start_date.nil? %>
-              <%= date_field :event, :start_date,
-                    placeholder: Time.now.strftime('%b %d, %Y'),
-                    class: "datepicker" %>
-            <% else %>
-              <%= date_field :event, :start_date,
-                    class: "datepicker",
-                    data: {"value" => @event.start.strftime('%Y-%m-%d') } %>
-            <% end %>
+            <%= date_field :event, :start_date,
+                  class: "datepicker",
+                  data: {"value" => @event.start.strftime('%Y-%m-%d') } %>
           </div>
         </div>
     </div>
@@ -43,7 +36,9 @@
             @
           </span>
           <div class="field time pure-u-7-24 pure-u-md-5-24">
-            <%= f.time_field :start_time, value: "7:00 PM", class: "timepicker" %>
+              <%= f.time_field :start_time,
+                                data: {value: @event.start.strftime('%H-%M')},
+                                class: "timepicker" %>
           </div>
         </div>
         <div class="field">
