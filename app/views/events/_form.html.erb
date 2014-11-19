@@ -16,7 +16,7 @@
           <div class="datepicker-box">
             <%= date_field :event, :start_date,
                   class: "datepicker",
-                  data: {"value" => @event.start.strftime('%Y-%m-%d') } %>
+                  data: {"value" => @event.start_date.strftime('%Y-%m-%d') } %>
           </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
           </span>
           <div class="field time pure-u-7-24 pure-u-md-5-24">
               <%= f.time_field :start_time,
-                                data: {value: @event.start.strftime('%H-%M')},
+                                data: {value: @event.start_time.strftime('%H-%M')},
                                 class: "timepicker" %>
           </div>
         </div>

@@ -9,7 +9,10 @@ class EventsController < ApplicationController
     #  but it only shows if session[:admin]
     if session[:admin]
       # Default start time is 'today' at 7PM
-      @event = Event.new(start: Time.zone.parse("7:00 PM"))
+      @event = Event.new(
+        start_date: Time.zone.today,
+        start_time: Time.zone.parse("7:00 PM")
+      )
     end
   end
 
@@ -19,7 +22,7 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    @event = Event.new(clean_params)
+    @event = Event.new(event_params)
 
     respond_to do |format|
       if @event.save
@@ -73,7 +76,7 @@ class EventsController < ApplicationController
   # Never trust parameters from the scary internet,
   # only allow the white list through.
   def event_params
-    params.require(:event).permit(:title, :subtitle, :start,
+    params.require(:event).permit(:title, :subtitle,
                                   :start_time, :start_date,
                                   :end, :location, :url)
   end
@@ -98,20 +101,7 @@ class EventsController < ApplicationController
   # this returns a hash of Date => [events...]
   def set_events_by_date
     @events_by_date = Event.order(:start).
-                            where("start > ?", DateTime.now).
-                            group_by { |t| t.start.to_date }
+                      where("start > ?", DateTime.now).
+                      group_by { |t| t.start.to_date }
   end
-
-  def clean_params
-    # The time comes in with no timezone (so we assume UTC)
-    # todo: try to infer the timezone (incase one is sent), or somehow
-    #  (intentionally) standardize time format
-    clean_params = event_params
-    clean_params[:start_time] = Time.zone.utc_to_local(
-      clean_params[:start_time]
-    ).to_s
-    clean_params
-
-  end
-
 end
