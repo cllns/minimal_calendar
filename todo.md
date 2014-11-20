@@ -7,6 +7,7 @@ Short term
 - Pricing info for events (assume free, but have some UI for paid events)
 - add static "About" page (perhaps using thoughtbot's high_voltage)
 - look into that we might be serving too many 'fontawesome' file types
+- add feature/integration tests
 
 
 Long term
