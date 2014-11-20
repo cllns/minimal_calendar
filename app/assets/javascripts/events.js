@@ -12,7 +12,7 @@ $(function() {
 
   $('.timepicker').pickatime({
     interval: 15,
-    formatSubmit: 'HH:i',
+    formatSubmit: 'HH:i EST',
     editable: true,
     hiddenName: true
   });
