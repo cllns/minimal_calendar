@@ -27,7 +27,7 @@ being shown at all.
 
 Development
 ---
-As of November 2014, Minimal Calendar is under active development.
+As of December 2014, Minimal Calendar is (sort of) under active development.
 
 Please check out the [todo file](todo.md).
 
