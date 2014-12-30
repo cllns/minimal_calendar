@@ -9,10 +9,7 @@ class EventsController < ApplicationController
     #  but it only shows if session[:admin]
     if session[:admin]
       # Default start time is 'today' at 7PM
-      @event = Event.new(
-        start_date: Time.zone.today,
-        start_time: Time.zone.parse("7:00 PM")
-      )
+      @event = Event.new( start: Time.zone.parse("7:00 PM"))
     end
   end
 
@@ -68,17 +65,20 @@ class EventsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet,
-  # only allow the white list through.
   def event_params
-    params.require(:event).permit(:title, :subtitle,
-                                  :start_time, :start_date,
-                                  :end, :location, :url)
+    params.require(:event).permit(:title, :subtitle, :end, :location, :url)
+                          .merge( start: start_from_params )
+  end
+
+  def start_from_params
+    start_params = params.require(:event).permit(:start_time, :start_date)
+    # Purposely not using Time.zone here.
+    # since we want to take the zone from the param
+    Time.parse("#{start_params[:start_date]} #{start_params[:start_time]}")
   end
 
   def authenticate
