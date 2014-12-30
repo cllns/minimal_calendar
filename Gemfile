@@ -27,7 +27,10 @@ gem "spring",        group: :development
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rvm', github: "capistrano/rvm"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
@@ -66,8 +69,7 @@ gem "time_splitter"
 gem "jquery-cookie-rails"
 
 # pure-css  (for grid and pretty buttons)
-# using a personal fork until the PR is merged
-gem "purecss-rails", git: "git://github.com/cllns/purecss-rails.git"
+gem "purecss-rails"
 
 # use SASS
 gem "sass-rails", "~> 4.0.3"
