@@ -101,7 +101,7 @@ class EventsController < ApplicationController
   # this returns a hash of Date => [events...]
   def set_events_by_date
     @events_by_date = Event.order(:start).
-                      where("start > ?", DateTime.now).
+                      where("start > ?", Time.zone.now).
                       group_by { |t| t.start.to_date }
   end
 end
