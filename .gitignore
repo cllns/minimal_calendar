@@ -17,3 +17,9 @@
 
 # Ignore secrets.yml
 config/secrets.yml
+
+# Ignore deploy (capistrano) files
+Capfile
+config/deploy.rb
+config/deploy
+.capistrano
