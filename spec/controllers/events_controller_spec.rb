@@ -100,7 +100,8 @@ RSpec.describe EventsController, type: :controller do
           title: "This is a new title",
           url: "http://example.com/new",
           location: "This is a new location",
-          start: DateTime.parse("2014-08-17 12:00PM EDT")
+          start_date: "2014-08-17",
+          start_time: "12:00 EDT"
         }
       end
 
@@ -113,7 +114,9 @@ RSpec.describe EventsController, type: :controller do
         expect(assigns(:event).title).to eq(new_attributes[:title])
         expect(assigns(:event).url).to eq(new_attributes[:url])
         expect(assigns(:event).location).to eq(new_attributes[:location])
-        expect(assigns(:event).start).to eq(new_attributes[:start])
+        expect(assigns(:event).start_date).to eq(
+          Time.zone.parse(new_attributes[:start_date]).to_date
+        )
       end
 
       it "assigns the requested event as @event" do
