@@ -31,7 +31,8 @@ RSpec.describe EventsController, type: :controller do
       title: "",
       url: "",
       location: "",
-      start: nil
+      start_date: "",
+      start_time: ""
     }
   end
 
@@ -48,7 +49,7 @@ RSpec.describe EventsController, type: :controller do
     it "assigns all events as @events_by_date" do
       event = Event.create! valid_attributes
       get :index, {}, valid_session
-      expect(assigns(:events_by_date)).to eq(event.start.to_date => [event])
+      expect(assigns(:events_by_date)).to eq(event.start_date.to_date => [event])
     end
   end
 
@@ -76,7 +77,7 @@ RSpec.describe EventsController, type: :controller do
 
       it "redirects to the created event" do
         post :create, { event: valid_attributes }, valid_session
-        expect(response).to redirect_to(events_url)
+        expect(response).to redirect_to(root_url)
       end
     end
 
@@ -100,7 +101,8 @@ RSpec.describe EventsController, type: :controller do
           title: "This is a new title",
           url: "http://example.com/new",
           location: "This is a new location",
-          start: DateTime.parse("2014-08-17 12:00PM EDT")
+          start_date: "2014-08-17",
+          start_time: "12:00 EDT"
         }
       end
 
@@ -113,7 +115,9 @@ RSpec.describe EventsController, type: :controller do
         expect(assigns(:event).title).to eq(new_attributes[:title])
         expect(assigns(:event).url).to eq(new_attributes[:url])
         expect(assigns(:event).location).to eq(new_attributes[:location])
-        expect(assigns(:event).start).to eq(new_attributes[:start])
+        expect(assigns(:event).start_date).to eq(
+          Time.zone.parse(new_attributes[:start_date]).to_date
+        )
       end
 
       it "assigns the requested event as @event" do
@@ -129,7 +133,7 @@ RSpec.describe EventsController, type: :controller do
         put :update,
             { id: event.to_param, event: valid_attributes },
             valid_session
-        expect(response).to redirect_to(events_url)
+        expect(response).to redirect_to(root_url)
       end
     end
 
@@ -163,7 +167,7 @@ RSpec.describe EventsController, type: :controller do
     it "redirects to the events list" do
       event = Event.create! valid_attributes
       delete :destroy, { id: event.to_param }, valid_session
-      expect(response).to redirect_to(events_url)
+      expect(response).to redirect_to(root_url)
     end
   end
 

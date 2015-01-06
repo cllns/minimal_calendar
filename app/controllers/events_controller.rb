@@ -24,7 +24,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.save
         format.html do
-          redirect_to events_url,
+          redirect_to root_url,
                       notice: "'#{@event.title}' was successfully added!"
         end
       else
@@ -38,7 +38,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.update(event_params)
         format.html do
-          redirect_to events_url,
+          redirect_to root_url,
                       notice: "'#{@event.title}' was successfully updated!"
         end
       else
@@ -52,7 +52,7 @@ class EventsController < ApplicationController
     @event.destroy
     respond_to do |format|
       format.html do
-        redirect_to events_url,
+        redirect_to root_url,
                     notice: "'#{@event.title}' was successfully deleted."
       end
     end
@@ -60,7 +60,7 @@ class EventsController < ApplicationController
 
   # GET /login
   def login
-    redirect_to events_url
+    redirect_to root_url
   end
 
   private
@@ -70,15 +70,9 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :subtitle, :end, :location, :url)
-                          .merge( start: start_from_params )
-  end
-
-  def start_from_params
-    start_params = params.require(:event).permit(:start_time, :start_date)
-    # Purposely not using Time.zone here.
-    # since we want to take the zone from the param
-    Time.parse("#{start_params[:start_date]} #{start_params[:start_time]}")
+    params.require(:event).permit(
+      :title, :subtitle, :end, :location, :url, :start_date, :start_time
+    )
   end
 
   def authenticate

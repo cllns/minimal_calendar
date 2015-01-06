@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  resources :events
-
   resources :events, only: [:create, :edit, :update, :destroy, :show]
-
-  # For now, we want the /events/ URL to redirect to the root_url.
-  # We could just swap out all instances of "events_url" in the code with
-  #  "root_url", but this is more extensible
-  get "/events", to: redirect("/")
 
   # TODO: separate login into its own controller
   # (or just use a real auth system)
