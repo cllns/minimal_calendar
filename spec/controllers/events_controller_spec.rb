@@ -31,7 +31,8 @@ RSpec.describe EventsController, type: :controller do
       title: "",
       url: "",
       location: "",
-      start: nil
+      start_date: "",
+      start_time: ""
     }
   end
 
