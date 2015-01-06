@@ -52,7 +52,7 @@ class EventsController < ApplicationController
     @event.destroy
     respond_to do |format|
       format.html do
-        redirect_to events_url,
+        redirect_to root_url,
                     notice: "'#{@event.title}' was successfully deleted."
       end
     end
@@ -60,7 +60,7 @@ class EventsController < ApplicationController
 
   # GET /login
   def login
-    redirect_to events_url
+    redirect_to root_url
   end
 
   private
