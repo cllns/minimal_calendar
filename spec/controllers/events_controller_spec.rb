@@ -49,7 +49,7 @@ RSpec.describe EventsController, type: :controller do
     it "assigns all events as @events_by_date" do
       event = Event.create! valid_attributes
       get :index, {}, valid_session
-      expect(assigns(:events_by_date)).to eq(event.start.to_date => [event])
+      expect(assigns(:events_by_date)).to eq(event.start_date.to_date => [event])
     end
   end
 
