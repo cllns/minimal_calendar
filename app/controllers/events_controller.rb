@@ -24,7 +24,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.save
         format.html do
-          redirect_to events_url,
+          redirect_to root_url,
                       notice: "'#{@event.title}' was successfully added!"
         end
       else
@@ -38,7 +38,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.update(event_params)
         format.html do
-          redirect_to events_url,
+          redirect_to root_url,
                       notice: "'#{@event.title}' was successfully updated!"
         end
       else

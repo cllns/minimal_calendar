@@ -76,7 +76,7 @@ RSpec.describe EventsController, type: :controller do
 
       it "redirects to the created event" do
         post :create, { event: valid_attributes }, valid_session
-        expect(response).to redirect_to(events_url)
+        expect(response).to redirect_to(root_url)
       end
     end
 
@@ -129,7 +129,7 @@ RSpec.describe EventsController, type: :controller do
         put :update,
             { id: event.to_param, event: valid_attributes },
             valid_session
-        expect(response).to redirect_to(events_url)
+        expect(response).to redirect_to(root_url)
       end
     end
 
@@ -163,7 +163,7 @@ RSpec.describe EventsController, type: :controller do
     it "redirects to the events list" do
       event = Event.create! valid_attributes
       delete :destroy, { id: event.to_param }, valid_session
-      expect(response).to redirect_to(events_url)
+      expect(response).to redirect_to(root_url)
     end
   end
 
