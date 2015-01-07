@@ -1,11 +1,12 @@
 source "https://rubygems.org"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "4.1.0"
+gem "rails", "4.2.0"
+
 # Use postgres as the database for Active Record
-gem "pg"
+gem "pg", "0.17.1"
 # Use Uglifier as compressor for JavaScript assets
 gem "uglifier", ">= 1.3.0"
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -48,7 +49,7 @@ gem "faker", group: :development
 
 group :development, :test do
   # use rspec
-  gem "rspec-rails", "~> 3.0.2"
+  gem "rspec-rails", "~> 3.0"
   # use shoulda (matchers)
   gem "shoulda-matchers", "~> 2.6.2"
 
