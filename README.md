@@ -27,11 +27,7 @@ being shown at all.
 
 Development
 ---
-As of January 2015, Minimal Calendar is (sort of) under active development.
-
 Please check out the [todo file](todo.md).
-
-Minimal Calendar is primarily a "portfolio project".
 
 
 Getting Started
